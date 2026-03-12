@@ -26,13 +26,14 @@ guided-component-architect/
 │   └── (generated components saved here)
 │
 ├── .env
+├── app.py
 ├── requirements.txt
 ├── README.md
 ```
 
 ## Architecture Overview
 ```bash
-User Prompt
+FastAPI UI (User Prompt)
     ↓
 Generator (Gemini AI + Design Tokens)
     ↓
@@ -74,7 +75,11 @@ Check **design/design-system.json** :
 
 ### 5. Run Agentic Loop
 ```bash
-python src/agentic_loop.py
+uvicorn main:app --reload
+```
+Then open in browser:
+```
+http://127.0.0.1:8000/docs
 ```
 
 ### 6. Expected Output
